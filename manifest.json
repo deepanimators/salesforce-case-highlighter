@@ -1,24 +1,31 @@
 {
   "manifest_version": 3,
   "name": "Salesforce Case Highlighter",
-  "version": "1.2",
-  "description": "Highlights Salesforce cases based on keywords, SLA age, and real-world urgency indicators.",
-  "permissions": ["storage"],
-  "host_permissions": ["https://*.salesforce.com/*"],
+  "version": "1.0",
+  "description": "A productivity Chrome Extension that highlights Salesforce Case rows based on keywords, urgency patterns, and SLA age.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*.lightning.force.com/*"
+  ],
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "icons/icon.png"
-  },
-  "content_scripts": [
-    {
-      "matches": ["https://*.salesforce.com/*"],
-      "js": ["content.js"],
-      "run_at": "document_idle"
+    "default_icon": {
+      "16": "icons/icon.png",
+      "48": "icons/icon.png",
+      "128": "icons/icon.png"
     }
-  ],
+  },
   "icons": {
     "16": "icons/icon.png",
     "48": "icons/icon.png",
     "128": "icons/icon.png"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.lightning.force.com/lightning/o/Case/list*"],
+      "js": ["content.js"]
+    }
+  ]
 }

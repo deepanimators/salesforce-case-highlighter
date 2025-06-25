@@ -4,16 +4,24 @@
   <title>Keywords</title>
   <style>
     body { font-family: sans-serif; width: 250px; padding: 10px; }
-    input, button { width: 100%; margin-top: 5px; }
+    /* Ensure the input and button inside the form are also styled */
+    #keyword-form input, #keyword-form button {
+      width: 100%;
+      margin-top: 5px;
+    }
     ul { padding-left: 0; list-style: none; }
     li { display: flex; justify-content: space-between; margin-top: 5px; }
   </style>
 </head>
 <body>
   <h3>Highlight Keywords</h3>
-  <input id="newKeyword" placeholder="Add keyword or regex" />
-  <button id="addBtn">Add</button>
-  <ul id="keywordList"></ul>
+  <form id="keyword-form">
+    <input type="text" id="keyword-input" placeholder="Add keyword or regex" /> 
+    <button type="submit" id="addBtn">Add</button>
+  </form>
+  
+  <ul id="keywords-list"></ul>
+  
   <script src="popup.js"></script>
 </body>
 </html>
