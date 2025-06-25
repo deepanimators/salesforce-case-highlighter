@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Salesforce Case Highlighter",
-  "version": "1.1",
-  "description": "Highlights Salesforce cases based on keywords and SLA age.",
+  "version": "1.2",
+  "description": "Highlights Salesforce cases based on keywords, SLA age, and real-world urgency indicators.",
   "permissions": ["storage"],
   "host_permissions": ["https://*.salesforce.com/*"],
   "action": {

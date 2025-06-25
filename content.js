@@ -1,6 +1,6 @@
 function getKeywords(callback) {
   chrome.storage.local.get('keywords', (data) => {
-    const keywords = data.keywords || ['urgent', 'asap', 'p1'];
+    const keywords = data.keywords || ['urgent', 'asap', 'p1', 'production down', 'customer impact', 'high severity', 'site outage'];
     callback(keywords.map(k => k.toLowerCase()));
   });
 }
@@ -11,6 +11,18 @@ function getTimeSince(dateString) {
   const diffMs = now - created;
   const mins = Math.floor(diffMs / 60000);
   return mins;
+}
+
+function containsCriticalIndicators(text) {
+  const patterns = [
+    /customer\simpact/i,
+    /production\sdown/i,
+    /site\soutage/i,
+    /cannot\slogin/i,
+    /system\sfailure/i,
+    /security\sbreach/i
+  ];
+  return patterns.some(p => p.test(text));
 }
 
 function highlightRows(keywords) {
@@ -25,11 +37,14 @@ function highlightRows(keywords) {
     }
 
     const matchesKeyword = keywords.some(kw => new RegExp(kw, 'i').test(text));
+    const isCritical = containsCriticalIndicators(text);
 
-    if (matchesKeyword || ageMins !== null) {
+    if (matchesKeyword || isCritical || ageMins !== null) {
       row.style.borderLeft = '5px solid red';
 
-      if (matchesKeyword) {
+      if (isCritical) {
+        row.style.backgroundColor = '#ff9999';
+      } else if (matchesKeyword) {
         row.style.backgroundColor = '#ffe6e6';
       }
 

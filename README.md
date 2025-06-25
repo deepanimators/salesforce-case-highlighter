@@ -1,21 +1,26 @@
 # Salesforce Case Highlighter Chrome Extension
 
-A productivity Chrome Extension that highlights Salesforce Case rows based on matching keywords or time-sensitive SLA thresholds.
+A productivity Chrome Extension that highlights Salesforce Case rows based on:
+- Matching keywords or regex
+- Real-world urgency patterns
+- Time-sensitive SLA age (with timer overlay)
+
+## Real-World P1 Scenarios Covered
+- Keywords: "urgent", "asap", "P1", "high severity"
+- Patterns: "production down", "site outage", "customer impact", "cannot login", "security breach"
+- Case age over 30/60 minutes
 
 ## Features
-- Keyword or regex based row highlighting
-- User-defined keyword list (stored in Chrome)
-- SLA age highlight (critical, warning, normal)
-- Custom popup UI to manage keywords
-- Runs automatically on Salesforce Lightning pages
+- Regex-based row highlighting
+- Custom keyword entry via popup
+- SLA timer display per row
+- Auto-runs on Salesforce Lightning UI
 
 ## Installation
 1. Go to `chrome://extensions`
 2. Enable Developer mode
 3. Click "Load Unpacked"
-4. Select the folder containing this extension
-
----
+4. Select the extension folder
 
 ## Folder Structure
 ```
