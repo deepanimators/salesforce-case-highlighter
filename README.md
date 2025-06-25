@@ -1,5 +1,8 @@
 # Salesforce Case Highlighter Chrome Extension
 
+A productivity Chrome Extension that highlights Salesforce Case list rows based on matching critical keywords, SLA age, and known urgency patterns.
+
+## Problem Statement
 A productivity Chrome Extension that highlights Salesforce Case rows based on:
 - Matching keywords or regex
 - Real-world urgency patterns
@@ -39,10 +42,6 @@ salesforce-case-highlighter/
 - Adjust SLA timing logic in `content.js`
 - Extend to play sound or show toast notifications if needed
 
-// === README.md ===
-# Salesforce Case Highlighter Chrome Extension
-
-A productivity Chrome Extension that highlights Salesforce Case list rows based on matching critical keywords, SLA age, and known urgency patterns.
 
 ## 🚀 Prompt-Based Architecture Summary
 
@@ -114,9 +113,6 @@ This tool was designed after analyzing workflows of support engineers struggling
 ---
 For questions, enhancements, or private Chrome Store deployment, contact the project owner.
 
-
-
-# Salesforce Case Highlighter - Chrome Extension
 
 ## 📌 Project Overview
 Salesforce Case Highlighter is a lightweight Chrome extension that enhances Salesforce support workflows by **highlighting P1/critical cases** directly in the Salesforce Case List View. It improves case triaging, ensures SLA compliance, and reduces manual scanning of support queues.
